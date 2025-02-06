@@ -3,13 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Downloader + Ads</title>
+    <title>🔥 Video Downloader + Ads 🔥</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            color: white;
         }
-        /* Fixed Ads on Right Side */
+        h1 {
+            background: #ff3e54;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        /* Input Box */
+        #urlInput {
+            width: 80%;
+            padding: 12px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        /* Select Quality */
+        #qualitySelect {
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        /* Download Button */
+        #downloadBtn {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        #downloadBtn:hover {
+            background: #45a049;
+        }
+        /* Fixed Ads */
         .fixed-ad {
             position: fixed;
             right: 10px;
@@ -22,34 +58,24 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
             padding: 5px;
         }
-        /* Input Box */
-        #urlInput {
-            width: 80%;
-            padding: 10px;
-            margin: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        /* Download Button */
-        #downloadBtn {
-            background: #28a745;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #downloadBtn:hover {
-            background: #218838;
-        }
     </style>
 </head>
 <body>
 
     <h1>🔥 TikTok | Instagram | YT | FB | Snapchat Downloader 🔥</h1>
-    
+
     <!-- Video URL Input -->
-    <input type="text" id="urlInput" placeholder="Paste Video URL Here..." />
+    <input type="text" id="urlInput" placeholder="Paste Video URL Here...">
+    
+    <!-- Quality Selection -->
+    <select id="qualitySelect">
+        <option value="mp4">MP4 (Standard)</option>
+        <option value="hd">MP4 HD</option>
+        <option value="hdr">MP4 HDR</option>
+        <option value="mp3">MP3 (Audio Only)</option>
+    </select>
+
+    <!-- Download Button -->
     <button id="downloadBtn" onclick="downloadVideo()">Download</button>
 
     <!-- Fixed Side Ad -->
@@ -61,35 +87,35 @@
     <script>
         function downloadVideo() {
             let url = document.getElementById('urlInput').value;
+            let quality = document.getElementById('qualitySelect').value;
+
             if (!url) {
                 alert('⚠️ Please enter a valid video URL!');
                 return;
             }
 
-            // Checking which site the URL belongs to
             let apiURL = '';
             if (url.includes('tiktok.com')) {
-                apiURL = 'https://api.tikmate.app/api/lookup?url=' + encodeURIComponent(url);
+                apiURL = `https://api.tikmate.app/api/lookup?url=${encodeURIComponent(url)}&format=${quality}`;
             } else if (url.includes('instagram.com')) {
-                apiURL = 'https://igram.io/api/download?url=' + encodeURIComponent(url);
+                apiURL = `https://igram.io/api/download?url=${encodeURIComponent(url)}&format=${quality}`;
             } else if (url.includes('facebook.com')) {
-                apiURL = 'https://getmyfb.com/api?url=' + encodeURIComponent(url);
+                apiURL = `https://getmyfb.com/api?url=${encodeURIComponent(url)}&format=${quality}`;
             } else if (url.includes('youtube.com') || url.includes('youtu.be')) {
-                apiURL = 'https://yt5s.com/api?url=' + encodeURIComponent(url);
+                apiURL = `https://yt5s.com/api?url=${encodeURIComponent(url)}&format=${quality}`;
             } else if (url.includes('snapchat.com')) {
-                apiURL = 'https://snapdownloader.com/api?url=' + encodeURIComponent(url);
+                apiURL = `https://snapdownloader.com/api?url=${encodeURIComponent(url)}&format=${quality}`;
             } else if (url.includes('snakevideo.com')) {
-                apiURL = 'https://snakevid.com/api?url=' + encodeURIComponent(url);
+                apiURL = `https://snakevid.com/api?url=${encodeURIComponent(url)}&format=${quality}`;
             } else {
                 alert('🚫 Unsupported Video Platform!');
                 return;
             }
 
-            // Redirect to API for downloading
-            window.location.href = apiURL;
+            window.open(apiURL, '_blank');
         }
 
-        // Second Ad Script (Delayed Load for Performance)
+        // Load Second Ad Script
         window.onload = function() {
             setTimeout(function() {
                 let adScript = document.createElement("script");
