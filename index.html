@@ -3,26 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fast Dual Ads</title>
+    <title>Video Downloader + Ads</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        /* Fixed Ads on Right Side */
+        .fixed-ad {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 160px;
+            height: 600px;
+            z-index: 9999;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 5px;
+        }
+        /* Input Box */
+        #urlInput {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        /* Download Button */
+        #downloadBtn {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #downloadBtn:hover {
+            background: #218838;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Ad Page</h1>
 
-    <!-- First Ad Script -->
-    <script async="async" data-cfasync="false" src="//pl25791112.profitablecpmrate.com/f588e475dc704125e3ebb24d69f49be4/invoke.js"></script>
-    <div id="container-f588e475dc704125e3ebb24d69f49be4"></div>
+    <h1>🔥 TikTok | Instagram | YT | FB | Snapchat Downloader 🔥</h1>
+    
+    <!-- Video URL Input -->
+    <input type="text" id="urlInput" placeholder="Paste Video URL Here..." />
+    <button id="downloadBtn" onclick="downloadVideo()">Download</button>
+
+    <!-- Fixed Side Ad -->
+    <div class="fixed-ad">
+        <script async="async" data-cfasync="false" src="//pl25791112.profitablecpmrate.com/f588e475dc704125e3ebb24d69f49be4/invoke.js"></script>
+        <div id="container-f588e475dc704125e3ebb24d69f49be4"></div>
+    </div>
 
     <script>
+        function downloadVideo() {
+            let url = document.getElementById('urlInput').value;
+            if (!url) {
+                alert('⚠️ Please enter a valid video URL!');
+                return;
+            }
+
+            // Checking which site the URL belongs to
+            let apiURL = '';
+            if (url.includes('tiktok.com')) {
+                apiURL = 'https://api.tikmate.app/api/lookup?url=' + encodeURIComponent(url);
+            } else if (url.includes('instagram.com')) {
+                apiURL = 'https://igram.io/api/download?url=' + encodeURIComponent(url);
+            } else if (url.includes('facebook.com')) {
+                apiURL = 'https://getmyfb.com/api?url=' + encodeURIComponent(url);
+            } else if (url.includes('youtube.com') || url.includes('youtu.be')) {
+                apiURL = 'https://yt5s.com/api?url=' + encodeURIComponent(url);
+            } else if (url.includes('snapchat.com')) {
+                apiURL = 'https://snapdownloader.com/api?url=' + encodeURIComponent(url);
+            } else if (url.includes('snakevideo.com')) {
+                apiURL = 'https://snakevid.com/api?url=' + encodeURIComponent(url);
+            } else {
+                alert('🚫 Unsupported Video Platform!');
+                return;
+            }
+
+            // Redirect to API for downloading
+            window.location.href = apiURL;
+        }
+
+        // Second Ad Script (Delayed Load for Performance)
         window.onload = function() {
-            // Delay for better performance
             setTimeout(function() {
-                // Second Ad Script
                 let adScript = document.createElement("script");
                 adScript.async = true;
                 adScript.src = "//pl25791444.profitablecpmrate.com/4c/b8/67/4cb86716730010dde2e4f95e27de5f69.js";
                 document.body.appendChild(adScript);
-            }, 500); // 0.5-second delay
+            }, 500);
         }
     </script>
+
 </body>
 </html>
