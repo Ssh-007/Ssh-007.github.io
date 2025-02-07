@@ -5,28 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultimate Video Downloader | YT/FB Downloader</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Ad Script -->
-    <script type='text/javascript' src='//pl25791444.profitablecpmrate.com/4c/b8/67/4cb86716730010dde2e4f95e27de5f69.js'></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
     <style>
         :root {
             --primary-color: #ff4757;
             --secondary-color: #2ed573;
             --gradient-bg: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%);
         }
-
         body {
             background: var(--gradient-bg);
             font-family: 'Segoe UI', sans-serif;
             min-height: 100vh;
         }
-
         .main-card {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             backdrop-filter: blur(10px);
         }
-
         .download-btn {
             background: var(--primary-color);
             color: white;
@@ -35,29 +34,24 @@
             border: none;
             transition: all 0.3s;
         }
-
         .download-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
         }
-
         .ad-banner {
             background: white;
             border-radius: 15px;
             padding: 20px;
             margin: 20px 0;
         }
-
         .feature-card {
             background: white;
             border-radius: 15px;
             transition: transform 0.3s;
         }
-
         .feature-card:hover {
             transform: translateY(-5px);
         }
-
         #loader {
             display: none;
             border: 4px solid #f3f3f3;
@@ -67,7 +61,6 @@
             height: 40px;
             animation: spin 1s linear infinite;
         }
-
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -84,13 +77,13 @@
 
         <!-- Ad Banner Top -->
         <div class="ad-banner text-center mb-4">
-            <!-- Your Ad Code Here -->
             <ins class="adsbygoogle"
                 style="display:block"
-                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                data-ad-slot="1234567890"
+                data-ad-client="ca-pub-XXXXXX"  <!-- Aapna AdSense ID yahan dalain -->
+                data-ad-slot="YYYYYY"
                 data-ad-format="auto"
                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
 
         <!-- Main Download Card -->
@@ -133,45 +126,15 @@
             </div>
         </div>
 
-        <!-- Features Section -->
-        <div class="row g-4 mb-4">
-            <div class="col-md-4">
-                <div class="p-3 feature-card">
-                    <h4>🦄 HD Quality</h4>
-                    <p>Download videos in 1080p, 2K, 4K quality</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-3 feature-card">
-                    <h4>⚡ Fast Conversion</h4>
-                    <p>Quick processing with our powerful servers</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-3 feature-card">
-                    <h4>🔒 Safe & Secure</h4>
-                    <p>No malware or unwanted software</p>
-                </div>
-            </div>
-        </div>
-
         <!-- Ad Banner Bottom -->
         <div class="ad-banner text-center">
-            <!-- Your Ad Code Here -->
             <ins class="adsbygoogle"
                 style="display:block"
-                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                data-ad-slot="0987654321"
+                data-ad-client="ca-pub-XXXXXX"
+                data-ad-slot="ZZZZZZ"
                 data-ad-format="auto"
                 data-full-width-responsive="true"></ins>
-        </div>
-
-        <!-- FAQ Section -->
-        <div class="main-card p-4 mt-4">
-            <h3 class="mb-4">❓ Frequently Asked Questions</h3>
-            <div class="accordion" id="faqAccordion">
-                <!-- FAQ Items Here -->
-            </div>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
     </div>
 
@@ -180,8 +143,8 @@
         <p>© 2024 Ultimate Video Downloader. Not affiliated with YouTube or Facebook.</p>
     </footer>
 
+    <!-- JavaScript -->
     <script>
-        // Simple demo functionality
         function showLoader() {
             document.getElementById('loader').style.display = 'block';
             setTimeout(() => {
@@ -192,38 +155,24 @@
         function downloadYT() {
             const url = document.getElementById('yt-url').value;
             if (!url) return alert('Please enter a YouTube URL');
-            showLoader();
-            
-            // Demo response
-            setTimeout(() => {
-                document.getElementById('yt-result').innerHTML = `
-                    <div class="alert alert-success">
-                        Download ready! 
-                        <a href="#" class="btn btn-sm btn-success">MP4 1080p</a>
-                        <a href="#" class="btn btn-sm btn-success">MP3</a>
-                    </div>
-                `;
-            }, 2000);
+
+            let apiUrl = `https://api.vevioz.com/api/button/mp4?url=${encodeURIComponent(url)}`;
+
+            document.getElementById('yt-result').innerHTML = `
+                <a href="${apiUrl}" target="_blank" class="btn btn-success">Download Video</a>
+            `;
         }
 
         function downloadFB() {
             const url = document.getElementById('fb-url').value;
             if (!url) return alert('Please enter a Facebook URL');
-            showLoader();
-            
-            // Demo response
-            setTimeout(() => {
-                document.getElementById('fb-result').innerHTML = `
-                    <div class="alert alert-primary">
-                        Download ready! 
-                        <a href="#" class="btn btn-sm btn-primary">HD Video</a>
-                    </div>
-                `;
-            }, 2000);
-        }
 
-        // Initialize ads
-        (adsbygoogle = window.adsbygoogle || []).push({});
+            let apiUrl = `https://fbdown.net/download.php?URL=${encodeURIComponent(url)}`;
+
+            document.getElementById('fb-result').innerHTML = `
+                <a href="${apiUrl}" target="_blank" class="btn btn-primary">Download Video</a>
+            `;
+        }
     </script>
 </body>
 </html>
