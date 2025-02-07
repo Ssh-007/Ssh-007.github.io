@@ -3,99 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikTok Video Downloader</title>
-    <meta name="description" content="Fastest TikTok video downloader! Save TikTok videos without watermark in MP4 format.">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/script_ssstik.min.js?v=1.20250205" defer></script>
+    <title>Ultimate Video Downloader | YT/FB Downloader</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Ad Script -->
+    <script type='text/javascript' src='//pl25791444.profitablecpmrate.com/4c/b8/67/4cb86716730010dde2e4f95e27de5f69.js'></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2ed573;
+            --gradient-bg: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%);
+        }
+
+        body {
+            background: var(--gradient-bg);
+            font-family: 'Segoe UI', sans-serif;
+            min-height: 100vh;
+        }
+
+        .main-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .download-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            border: none;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+        }
+
+        .ad-banner {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        #loader {
+            display: none;
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid var(--primary-color);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
-<body>
-    <div class="main__content__container u-m-bottom d-flex">
-        <div class="u-smaller-text flex-1 align-items-center text text--text">
-            <h3>Download TikTok video on your mobile phone</h3>
-            <p>If you want to launch the TikTok download or remove a TikTok watermark on Android or iPhone, you’ll have to launch the TT app and choose a video.</p>
-            <p>On the video page, you’ll see the arrow-shaped "Share" button on the right side of the screen. Tap on it, and select "Copy link".</p>
-            <p>Now open the web page and paste the link into the text field at the top of the page of our TikTok video downloader. Then press the "TikTok video download" button to get the link. The file from TT (Musically) will be saved without any logos and in MP4 format.</p>
+<body class="py-5">
+    <div class="container">
+        <!-- Header -->
+        <div class="text-center mb-5">
+            <h1 class="text-white display-4 fw-bold">🎥 Ultimate Video Downloader</h1>
+            <p class="text-white lead">Download YouTube & Facebook Videos in HD Quality</p>
         </div>
-        <div class="d-flex align-items-center text--image">
-            <div class="flex-1 image__wrapper">
-                <img src="/images/download.svg" loading="lazy" width="416" height="289" alt="tiktok downloader android">
-            </div>
-        </div>
-    </div>
 
-    <div class="main__content__container u-m-bottom d-flex">
-        <div class="d-flex text-pr align-items-center text--image">
-            <div class="flex-1 image__wrapper">
-                <img src="/images/video.svg" loading="lazy" width="368" height="321" alt="download tiktok video pc">
-            </div>
+        <!-- Ad Banner Top -->
+        <div class="ad-banner text-center mb-4">
+            <!-- Your Ad Code Here -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                data-ad-slot="1234567890"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
         </div>
-        <div class="u-smaller-text flex-1 align-items-center text text--text">
-            <h3>TikTok downloader without watermark app for PC</h3>
-            <p>To use the TikTok video download without watermark HD app on PC, laptop (Windows 7, 10), Mac, or a laptop, copy a link from the website.</p>
-            <p>Next, go back to SSS TikTok Watermark Remover and paste the link in the input field on the main page. After that, click on the "Save TikTok" button to get the link.</p>
-            <p>Download TikTok video without any trademark, and in the highest quality. The TikTok video download website works perfectly on Windows, Mac OS, and Linux. Another added plus: PC users are not required to install any additional apps to download TikTok videos.</p>
-        </div>
-    </div>
 
-    <!-- Ad Placement Section -->
-    <div id="adBottom">
-        <div class="ad_sticky">
-            <!-- Insert your new ad code here -->
-            <ins class="adsbygoogle" id="ad_bottom" data-full-width-responsive="true"></ins>
-            <div class="ad-close" onclick="document.getElementById('adBottom').style.display = 'none';document.getElementById('footer').style.marginBottom='0'">
-                <svg width="22px" height="22px" viewBox="0 0 16 16" class="bi bi-x" fill="#000" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                </svg>
-            </div>
-        </div>
-    </div>
-
-    <footer id="footer">
-        <div class="footer__container d-flex justify-content-between">
-            <div class="flex-1"></div>
-            <div class="flex-2">
-                <nav class="footer__navigation flex-column">
-                    <div class="footer-row row-1">
-                        <a href="/contacts" target="_self">Contacts</a>
-                        <a href="/apk" target="_self">APK</a>
-                        <a href="/download-tiktok-stories" target="_self">Stories</a>
+        <!-- Main Download Card -->
+        <div class="main-card p-4 mb-4">
+            <div class="row g-4">
+                <!-- YouTube Download Section -->
+                <div class="col-md-6">
+                    <div class="p-3 feature-card">
+                        <h3 class="text-danger mb-4">YouTube Downloader</h3>
+                        <div class="input-group mb-3">
+                            <input type="url" id="yt-url" class="form-control" 
+                                   placeholder="Paste YouTube URL here">
+                            <button class="btn btn-danger" onclick="downloadYT()">
+                                Download
+                            </button>
+                        </div>
+                        <div id="yt-result" class="mt-3"></div>
                     </div>
-                    <div class="footer-row row-2">
-                        <b>We are not affiliated with TikTok, Douyin, or Bytedance.</b>
+                </div>
+
+                <!-- Facebook Download Section -->
+                <div class="col-md-6">
+                    <div class="p-3 feature-card">
+                        <h3 class="text-primary mb-4">Facebook Downloader</h3>
+                        <div class="input-group mb-3">
+                            <input type="url" id="fb-url" class="form-control" 
+                                   placeholder="Paste Facebook URL here">
+                            <button class="btn btn-primary" onclick="downloadFB()">
+                                Download
+                            </button>
+                        </div>
+                        <div id="fb-result" class="mt-3"></div>
                     </div>
-                </nav>
+                </div>
             </div>
-            <div class="flex-1 lang-wrapper">
-                <ul id="language-switcher">
-                    <li class="">
-                        <div id="menuLink1">English&nbsp;&nbsp;&nbsp;</div>
-                        <ul class="pure-menu-children u-smaller-text u-shadow--black">
-                            <li class="pure-menu-item"><a href="/id" lang="id" class="pure-menu-link">Bahasa Indonesia</a></li>
-                            <li class="pure-menu-item"><a href="/de" lang="de" class="pure-menu-link">Deutsch</a></li>
-                            <li class="pure-menu-item"><a href="/es" lang="es" class="pure-menu-link">Español</a></li>
-                            <li class="pure-menu-item"><a href="/fr" lang="fr" class="pure-menu-link">Français</a></li>
-                            <li class="pure-menu-item"><a href="/ja" lang="ja" class="pure-menu-link">日本語</a></li>
-                            <li class="pure-menu-item"><a href="/ko" lang="ko" class="pure-menu-link">한국어</a></li>
-                            <li class="pure-menu-item"><a href="/pt" lang="pt" class="pure-menu-link">Português (Brasil)</a></li>
-                            <li class="pure-menu-item"><a href="/ru" lang="ru" class="pure-menu-link">Русский</a></li>
-                            <li class="pure-menu-item"><a href="/tr" lang="tr" class="pure-menu-link">Türkçe</a></li>
-                            <li class="pure-menu-item"><a href="/vi" lang="vi" class="pure-menu-link">Tiếng Việt</a></li>
-                            <li class="pure-menu-item"><a href="/ar" lang="ar" class="pure-menu-link">العربية</a></li>
-                            <li class="pure-menu-item"><a href="/th" lang="th" class="pure-menu-link">ไทย</a></li>
-                            <li class="pure-menu-item"><a href="/it" lang="it" class="pure-menu-link">Italiano</a></li>
-                            <li class="pure-menu-item"><a href="/pl" lang="pl" class="pure-menu-link">Polskie</a></li>
-                            <li class="pure-menu-item"><a href="/ms" lang="ms" class="pure-menu-link">Malaysian</a></li>
-                            <li class="pure-menu-item"><a href="/uk" lang="uk" class="pure-menu-link">Ukrainian</a></li>
-                            <li class="pure-menu-item"><a href="/nl" lang="nl" class="pure-menu-link">Nederlands</a></li>
-                            <li class="pure-menu-item"><a href="/ro" lang="ro" class="pure-menu-link">Romanian</a></li>
-                        </ul>
-                    </li>
-                </ul>
+
+            <!-- Loader -->
+            <div class="text-center mt-4">
+                <div id="loader"></div>
             </div>
         </div>
-        <div class="text-center">
-            <div class="copyright">Copyright 2018-2025</div>
+
+        <!-- Features Section -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-4">
+                <div class="p-3 feature-card">
+                    <h4>🦄 HD Quality</h4>
+                    <p>Download videos in 1080p, 2K, 4K quality</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 feature-card">
+                    <h4>⚡ Fast Conversion</h4>
+                    <p>Quick processing with our powerful servers</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 feature-card">
+                    <h4>🔒 Safe & Secure</h4>
+                    <p>No malware or unwanted software</p>
+                </div>
+            </div>
         </div>
+
+        <!-- Ad Banner Bottom -->
+        <div class="ad-banner text-center">
+            <!-- Your Ad Code Here -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                data-ad-slot="0987654321"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="main-card p-4 mt-4">
+            <h3 class="mb-4">❓ Frequently Asked Questions</h3>
+            <div class="accordion" id="faqAccordion">
+                <!-- FAQ Items Here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-white mt-5">
+        <p>© 2024 Ultimate Video Downloader. Not affiliated with YouTube or Facebook.</p>
     </footer>
+
+    <script>
+        // Simple demo functionality
+        function showLoader() {
+            document.getElementById('loader').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+            }, 2000);
+        }
+
+        function downloadYT() {
+            const url = document.getElementById('yt-url').value;
+            if (!url) return alert('Please enter a YouTube URL');
+            showLoader();
+            
+            // Demo response
+            setTimeout(() => {
+                document.getElementById('yt-result').innerHTML = `
+                    <div class="alert alert-success">
+                        Download ready! 
+                        <a href="#" class="btn btn-sm btn-success">MP4 1080p</a>
+                        <a href="#" class="btn btn-sm btn-success">MP3</a>
+                    </div>
+                `;
+            }, 2000);
+        }
+
+        function downloadFB() {
+            const url = document.getElementById('fb-url').value;
+            if (!url) return alert('Please enter a Facebook URL');
+            showLoader();
+            
+            // Demo response
+            setTimeout(() => {
+                document.getElementById('fb-result').innerHTML = `
+                    <div class="alert alert-primary">
+                        Download ready! 
+                        <a href="#" class="btn btn-sm btn-primary">HD Video</a>
+                    </div>
+                `;
+            }, 2000);
+        }
+
+        // Initialize ads
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 </body>
 </html>
