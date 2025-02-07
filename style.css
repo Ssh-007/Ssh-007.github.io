@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+main {
+    padding: 2em;
+}
+article {
+    background-color: white;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h2, h3 {
+    color: #333;
+}
+img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Ad Styling */
+.ad-container {
+    width: 100%;
+    max-width: 320px; /* Mobile Friendly Width */
+    margin: 10px auto; /* Centering */
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .ad-container {
+        max-width: 728px; /* Larger ad frame for desktop */
+    }
+}
