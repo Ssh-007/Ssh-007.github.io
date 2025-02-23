@@ -2,34 +2,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIP Earning</title>
+    <title>TikTok Video Downloader</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .container { margin-top: 50px; }
-        .box { padding: 20px; border: 1px solid #ccc; display: inline-block; border-radius: 10px; }
-        .btn { padding: 10px 20px; background: green; color: white; border: none; cursor: pointer; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>VIP Earning Program</h2>
-        <div class="box">
-            <p>Your Balance: <strong>Rs. <span id="balance">0</span></strong></p>
-            <button class="btn" onclick="inviteFriend()">Invite a Friend (Earn Rs. 20)</button>
-            <button class="btn" onclick="withdraw()">Withdraw (Min Rs. 300)</button>
-        </div>
-        <p id="status"></p>
-    </div><script>
-    let balance = 0;
-    function inviteFriend() {
-        balance += 20;
-        document.getElementById("balance").innerText = balance;
-    }
-    function withdraw() {
-        if (balance >= 300) {
-            document.getElementById("status").innerText = "Withdrawal Processing... (3-5 Days)";
-        } else {
-            document.getElementById("status").innerText = "Minimum Rs. 300 required for withdrawal!";
+    <h2>TikTok Video Downloader (No Watermark)</h2>
+    <p>Paste your TikTok video URL below:</p>
+    <input type="text" id="videoUrl" placeholder="Enter TikTok video URL here...">
+    <button onclick="downloadVideo()">Download</button>
+    <div class="result" id="result"></div><script>
+    async function downloadVideo() {
+        let url = document.getElementById("videoUrl").value;
+        if (!url) {
+            alert("Please enter a TikTok video URL");
+            return;
+        }
+        
+        let apiUrl = `https://api.tikwm.com/api/?url=${encodeURIComponent(url)}`;
+        
+        try {
+            let response = await fetch(apiUrl);
+            let data = await response.json();
+            if (data && data.data && data.data.play) {
+                document.getElementById("result").innerHTML = `<a href="${data.data.play}" download>Click here to download</a>`;
+            } else {
+                document.getElementById("result").innerHTML = "Failed to fetch video. Try again.";
+            }
+        } catch (error) {
+            document.getElementById("result").innerHTML = "Error fetching video.";
         }
     }
 </script>
